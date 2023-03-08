@@ -1,0 +1,16 @@
+#gameover{
+    text-align: center;
+    max-width: 500px;
+}
+
+#gameover h2, #gameover p{
+    margin-bottom: 1rem;
+}
+
+#gameover p{
+    color: rgb(206, 206, 38);
+}
+
+#gameover img{
+    margin-top: 2rem;
+}

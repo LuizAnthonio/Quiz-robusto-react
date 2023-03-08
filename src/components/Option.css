@@ -1,0 +1,42 @@
+.option{
+   
+    background-color: rgb(134, 146, 26);
+    height: 2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.4s;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.option:hover{
+    
+   /* background-color: rgb(223, 210, 28);*/
+    
+    opacity: 1;
+}
+
+.option p{
+    font-size: 18px;
+    
+}
+
+.option-container .option p{
+    margin-bottom: 0 ;
+}
+
+.correct{
+    background-color: #0bfc03;
+    font-weight: bold;
+}
+
+.wrong{
+    background-color: rgb(146, 40, 26);
+    opacity: 0.4;
+}
