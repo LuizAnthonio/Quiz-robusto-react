@@ -7,7 +7,7 @@ import Selector from "../components/Selector";
 
 
 
-/*
+
 const response = await axios.get('https://quiz-perguntas-node-js.onrender.com/').then(resp => {
  //   console.log("resposta api: ",resp.data)
    //console.log(res.data + 'dad')
@@ -21,7 +21,7 @@ const response = await axios.get('https://quiz-perguntas-node-js.onrender.com/')
 
 
 const questions = response;
-*/
+
 
 
 const STAGES = ["Start", "Playing", "End","Cadastrar"]
