@@ -55,12 +55,28 @@ const quizReducer = (state, action) => {
             };
 
         case "CHANGE_STATE":
-           // const categoria = action.payload;
-            
-            return {
+            const categoria = action.payload;
+
+
+            if(categoria === "vazio"){
+
+                return {
                     ...state,
                     gameStage: STAGES[1],
+                   
                 }
+
+            }else{
+
+                return {
+                    ...state,
+                    gameStage: STAGES[1],
+                    questions: questions.filter( (per)=> per.tag === categoria )
+                }
+
+            }
+            
+            
            
 
             

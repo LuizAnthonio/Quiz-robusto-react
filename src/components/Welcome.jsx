@@ -27,7 +27,7 @@ const Welcome = () => {
 
         axios.post('https://quiz-perguntas-node-js.onrender.com', {selected: selected})
 
-        dispatch({type:"CHANGE_STATE"})
+        dispatch({type:"CHANGE_STATE",payload: selected})
 
     }
 
@@ -48,6 +48,7 @@ const Welcome = () => {
                
 
             <select className="select" name="tag"  onChange={(e) => setSelected(e.target.value)} >
+                <option value={"vazio"}>Tudo</option>
                 {TAGS.map((b) => <option key={b} value={b} >{b}</option>  )}
                 
             </select>
