@@ -141,7 +141,7 @@ const teste = []
                 <input type='radio' value={op5} onChange={(e) => setAnswer(e.target.value)} name='answer' />
                 <div className='opcao-container'>
                 <span>op5</span>
-                <input type='text' name="op5" value={op5} onChange={(e) => setOp5(e.target.value)} required/>
+                <input type='text' name="op5" value={op5} onChange={(e) => setOp5(e.target.value)} />
 
                 </div>
                
@@ -150,7 +150,7 @@ const teste = []
                 <br/>
 
                 <select className="select" name="tag"  onChange={(e) => setTag(e.target.value)} required>
-                    <option></option>
+                    <option disabled selected>-- Selecione a Categoria --</option>
                    {TAGS.map(e =>  <option key={e} value={e}>{e}</option>)}
                    
                 </select>
