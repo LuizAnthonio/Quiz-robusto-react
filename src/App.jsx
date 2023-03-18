@@ -14,6 +14,7 @@ import CadastrarPergunta from './components/CadastrarPergunta';
 
 
 
+
 import './App.css'
 
 
@@ -23,7 +24,7 @@ function App() {
 
   const [quizState, dispatch] = useContext(Quizcontext);
 
-  
+ 
 
  //export const ups = () => ops.map(e => <label> <input type="radio" value={e} name='c'/> {e}</label> )
 
@@ -52,5 +53,7 @@ function App() {
     </div>
   )
 }
+
+
 
 export default App

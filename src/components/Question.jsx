@@ -1,6 +1,8 @@
 
 import { useContext } from 'react';
 import { Quizcontext } from '../context/quiz';
+//import { SELECTED } from '../components/Welcome'
+
 
 import Option from "../components/Option";
 
@@ -22,7 +24,9 @@ const Question = () => {
         })
     }
 
+
     console.log(quizState)
+    //console.log('um teste', SELECTED)
 
     return(
         <div id='question'>
@@ -43,12 +47,12 @@ const Question = () => {
                     
                     />
                 ))}
-               
+               {currentQuestion.tag}
             </div>
 
             {quizState.answerSelected && (
             
-            <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })} >Continuar</button>
+            <button onClick={() => dispatch({ type: "CHANGE_QUESTION" , payload:currentQuestion.tag})} >Continuar</button>
         
                 
             )}
@@ -59,5 +63,7 @@ const Question = () => {
         </div>
     )
 }
+
+
 
 export default Question;

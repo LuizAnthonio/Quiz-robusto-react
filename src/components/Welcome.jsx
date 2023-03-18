@@ -11,6 +11,7 @@ import Quiz from "../img/quiz.svg"
 import './Welcome.css';
 
 
+
 const Welcome = () => {
 
     const [selected,setSelected] = useState('vazio')
@@ -18,6 +19,11 @@ const Welcome = () => {
     ///quizState pega os valores e o dispatch muda eles
 
     const [quizState, dispatch] = useContext(Quizcontext);
+
+    
+  
+
+    const teste = selected
 
     function heandleSelectCategory(e){
         e.preventDefault()
@@ -27,11 +33,18 @@ const Welcome = () => {
 
         axios.post('https://quiz-perguntas-node-js.onrender.com', {selected: selected})
 
+        
+        dispatch({type:"CHANGE_CATEGORIA",payload: selected})
         dispatch({type:"CHANGE_STATE",payload: selected})
+
+        
+       
+     
 
     }
 
 
+   
     //console.log(quizState)
 
     return(
@@ -71,5 +84,7 @@ const Welcome = () => {
         </div>
     )
 }
+
+
 
 export default Welcome;

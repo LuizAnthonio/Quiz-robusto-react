@@ -8,8 +8,26 @@ import Selector from "../components/Selector";
 
 
 
+
+
+const response = await fetch("https://quiz-perguntas-node-js.onrender.com/")
+  .then((response) => {
+
+    return response.json()
+
+})
+ // .then((data) => console.log(data))
+  
+
+
+ //console.log(response)
+  const questions = response;
+ 
+
+ /*
+
 const response = await axios.get('https://quiz-perguntas-node-js.onrender.com/').then(resp => {
- //   console.log("resposta api: ",resp.data)
+    //console.log("resposta api: ",resp.data)
    //console.log(res.data + 'dad')
 
     return resp.data;
@@ -21,6 +39,8 @@ const response = await axios.get('https://quiz-perguntas-node-js.onrender.com/')
 
 
 const questions = response;
+*/
+//console.log("Isso é um teste de Categoria: ",selected)
 
 
 
@@ -45,7 +65,15 @@ const quizReducer = (state, action) => {
     switch(action.type){
         
 
-       
+        case "CHANGE_CATEGORIA":
+            const cate = action.payload
+
+          return {
+                ...state,
+                 questions: questions.filter( (per)=> per.tag === cate )
+            }
+
+          
 
         case "CHANGE_STATE_START":
             return {
@@ -57,6 +85,7 @@ const quizReducer = (state, action) => {
         case "CHANGE_STATE":
             const categoria = action.payload;
 
+            
 
             if(categoria === "vazio"){
 
@@ -71,7 +100,7 @@ const quizReducer = (state, action) => {
                 return {
                     ...state,
                     gameStage: STAGES[1],
-                    questions: questions.filter( (per)=> per.tag === categoria )
+                   questions: questions.filter( (per)=> per.tag === categoria )
                 }
 
             }
@@ -100,12 +129,18 @@ const quizReducer = (state, action) => {
 
         case "CHANGE_QUESTION":
             const nexQuestion = state.currentQuestion + 1;
-            let endGame = false
+            let endGame = false;
+            let categoria_Question = action.payload;
 
-            if(!questions[nexQuestion]){
+            console.log('Olha só: ',categoria_Question)
+
+            if(!questions[nexQuestion] || !questions.filter( (per)=> per.tag === categoria_Question )[nexQuestion] ){
                 endGame = true;
 
             }
+
+           console.log("endGame: ",endGame)
+
 
             return {
                 ...state,
@@ -125,6 +160,8 @@ const quizReducer = (state, action) => {
             let correctAnswer = 0;
 
             if(answer === option) correctAnswer = 1;
+
+            console.log("Score: ",state.score)
 
             return {
                 ...state,
