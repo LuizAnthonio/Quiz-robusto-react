@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { createContext, useReducer } from "react";
 //import questions from '../data/questions';
-import Selector from "../components/Selector";
+//import Selector from "../components/Selector";
 
 
 
