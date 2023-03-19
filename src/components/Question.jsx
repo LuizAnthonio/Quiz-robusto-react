@@ -35,7 +35,11 @@ const Question = () => {
             
             <h1>Question</h1>
             <p>Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}</p>
+             <img src={currentQuestion.img} className={`${currentQuestion.img && ("imagem-pergunta")} ${!currentQuestion.img && ("none-image")}`}/>
             <h2>{currentQuestion.question}</h2>
+           
+
+           
             <div id='options-container'>
                 {currentQuestion.options.map((option) => (
                     <Option 
@@ -47,7 +51,7 @@ const Question = () => {
                     
                     />
                 ))}
-               {currentQuestion.tag}
+               {currentQuestion.tag }
             </div>
 
             {quizState.answerSelected && (

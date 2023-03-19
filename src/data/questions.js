@@ -9,6 +9,7 @@ const data = [
     ],
     answer: "JavaScript puro",
     tag:"javascript",
+    img: "https://images.pexels.com/photos/14939897/pexels-photo-14939897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     
   },
   {
@@ -16,6 +17,7 @@ const data = [
     options: ["const", "let", "var", "define"],
     answer: "const",
     tag:"javascript",
+     img: "src/img/quiz.svg",
     
   },
   {
@@ -23,6 +25,7 @@ const data = [
     options: ["string", "number", "boolean", "float"],
     answer: "float",
     tag:"javascript",
+     img: "https://images.pexels.com/photos/14939897/pexels-photo-14939897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     
   },
   {
@@ -30,6 +33,7 @@ const data = [
     options: ["querySelector", "parseInt", "sort", "reduce"],
     answer: "querySelector",
     tag:"javascript",
+     img: false
     
   },
   {
@@ -38,6 +42,7 @@ const data = [
     options: ["qty", "length", "items", "index"],
     answer: "length",
     tag:"javascript",
+     img: "https://images.pexels.com/photos/14939897/pexels-photo-14939897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     
   },
 
