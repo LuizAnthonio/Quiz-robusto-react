@@ -2,14 +2,14 @@ import axios from 'axios';
 
 
 import { createContext, useReducer } from "react";
-import questions from '../data/questions';
+//import questions from '../data/questions';
 //import Selector from "../components/Selector";
 
 
 
 
- /*
 
+ 
 const response = await fetch("https://quiz-perguntas-node-js.onrender.com/")
   .then((response) => {
 
@@ -20,10 +20,10 @@ const response = await fetch("https://quiz-perguntas-node-js.onrender.com/")
   
 
 
- //console.log(response)
-  const questions = response;
+ console.log(response)
+  const questions = response
  
-
+/*
 
 
 const response = await axios.get('https://quiz-perguntas-node-js.onrender.com/').then(resp => {
@@ -37,9 +37,9 @@ const response = await axios.get('https://quiz-perguntas-node-js.onrender.com/')
   
   })
 
-
-const questions = response;
 */
+//var questions = response;
+
 //console.log("Isso é um teste de Categoria: ",selected)
 
 
@@ -67,11 +67,15 @@ const quizReducer = (state, action) => {
 
         case "CHANGE_CATEGORIA":
             const cate = action.payload
+          
+           
+            const nQuestions = questions.filter( (per)=> per.tag === cate )
+            
+            return {
+            ...state,
+            questions: nQuestions,
+        }
 
-          return {
-                ...state,
-                 questions: questions.filter( (per)=> per.tag === cate )
-            }
 
           
 

@@ -6,6 +6,13 @@
     padding: 2rem;
 }
 
+.none-image{
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+
 #question h2{
     text-align: justify;
     margin-bottom: 2rem;

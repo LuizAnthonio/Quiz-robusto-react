@@ -91,7 +91,7 @@ const teste = []
                 </div>
 
                 <div className="input">
-                <input type='radio' value={op1} onChange={(e) => setAnswer(e.target.value)} name='answer' />
+                <input type='radio' value={op1} onChange={(e) => setAnswer(e.target.value)} name='answer' required/>
 
                 <div className='opcao-container'>
                 <span>op1</span>
@@ -103,7 +103,7 @@ const teste = []
                 </div>
 
                 <div className="input">
-                <input type='radio' value={op2} onChange={(e) => setAnswer(e.target.value)} name='answer' />
+                <input type='radio' value={op2} onChange={(e) => setAnswer(e.target.value)} name='answer' required />
                
                 <div className='opcao-container'>
                 <span>op2</span>
@@ -116,7 +116,7 @@ const teste = []
 
                 <div className="input">
 
-                <input type='radio' value={op3} onChange={(e) => setAnswer(e.target.value)} name='answer' />
+                <input type='radio' value={op3} onChange={(e) => setAnswer(e.target.value)} name='answer'  required/>
 
                 <div className='opcao-container'>
 
@@ -128,7 +128,7 @@ const teste = []
                 </div>
                 
                 <div className="input">
-                <input type='radio' value={op4} onChange={(e) => setAnswer(e.target.value)} name='answer' />
+                <input type='radio' value={op4} onChange={(e) => setAnswer(e.target.value)} name='answer' required/>
                 <div className='opcao-container'>
                 <span>op4</span>
                 <input type='text' name="op4" value={op4} onChange={(e) => setOp4(e.target.value)} required/>
@@ -138,7 +138,7 @@ const teste = []
                 </div>
 
                 <div className="input">
-                <input type='radio' value={op5} onChange={(e) => setAnswer(e.target.value)} name='answer' />
+                <input type='radio' value={op5} onChange={(e) => setAnswer(e.target.value)} name='answer' required/>
                 <div className='opcao-container'>
                 <span>op5</span>
                 <input type='text' name="op5" value={op5} onChange={(e) => setOp5(e.target.value)} />

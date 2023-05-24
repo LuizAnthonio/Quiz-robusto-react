@@ -1,7 +1,7 @@
 
 
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Quizcontext } from "../context/quiz";
 import { TAGS } from "../context/quiz";
 
@@ -20,7 +20,9 @@ const Welcome = () => {
 
     const [quizState, dispatch] = useContext(Quizcontext);
 
-    
+    useEffect(() => {
+        dispatch({type:"CHANGE_CATEGORIA",payload: selected})
+    },[selected])
   
 
     const teste = selected
@@ -34,7 +36,7 @@ const Welcome = () => {
         axios.post('https://quiz-perguntas-node-js.onrender.com', {selected: selected})
 
         
-        dispatch({type:"CHANGE_CATEGORIA",payload: selected})
+        
         dispatch({type:"CHANGE_STATE",payload: selected})
 
         
