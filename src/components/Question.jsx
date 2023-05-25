@@ -20,7 +20,7 @@ const Question = () => {
         console.log(option)
         dispatch({
             type: "CHECK_ANSWER",
-            payload: {answer: currentQuestion.answer, option},
+            payload: {answer: currentQuestion.resposta, option: option},
         })
     }
 
@@ -35,8 +35,9 @@ const Question = () => {
             
             <h1>Question</h1>
             <p>Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}</p>
-             <img src={currentQuestion.img} className={`${currentQuestion.img && ("imagem-pergunta")} ${!currentQuestion.img && ("none-image")}`}/>
-            <h2>{currentQuestion.question}</h2>
+            {currentQuestion.enunciado && <h3>{currentQuestion.enunciado}</h3>}
+             <img src={currentQuestion.imagem} className={`${currentQuestion.imagem && ("imagem-pergunta")} ${!currentQuestion.imagem && ("none-image")}`}/>
+            <h2>{currentQuestion.pergunta}</h2>
            
 
            
@@ -45,13 +46,13 @@ const Question = () => {
                     <Option 
                     option={option} 
                     key={option}  
-                    answer={currentQuestion.answer}
+                    answer={currentQuestion.resposta}
                     selectOption={() => onSelectOption(option)}
                     
                     
                     />
                 ))}
-               {currentQuestion.tag }
+               {currentQuestion.materia }
             </div>
 
             {quizState.answerSelected && (

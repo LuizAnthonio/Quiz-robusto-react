@@ -4,6 +4,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Quizcontext } from "../context/quiz";
 import { TAGS } from "../context/quiz";
+import { CONCURSOS } from "../context/quiz";
 
 import Quiz from "../img/quiz.svg"
 
@@ -21,7 +22,7 @@ const Welcome = () => {
     const [quizState, dispatch] = useContext(Quizcontext);
 
     useEffect(() => {
-        dispatch({type:"CHANGE_CATEGORIA",payload: selected})
+       dispatch({type:"CHANGE_CATEGORIA",payload: selected})
     },[selected])
   
 
@@ -33,18 +34,22 @@ const Welcome = () => {
        // alert(selected)
         console.log(selected)
 
+        //se selected for igual a vazio então -> url de todos os casos 
+
+        // se for diferente de vazio -> url 
+
         axios.post('https://quiz-perguntas-node-js.onrender.com', {selected: selected})
 
         
         
-        dispatch({type:"CHANGE_STATE",payload: selected})
+       dispatch({type:"CHANGE_STATE",payload: selected})
 
         
        
      
 
     }
-
+console.log(selected)
 
    
     //console.log(quizState)
@@ -60,7 +65,8 @@ const Welcome = () => {
 
             <form onSubmit={heandleSelectCategory}>
 
-               
+            
+            
 
             <select className="select" name="tag"  onChange={(e) => setSelected(e.target.value)} >
                 <option value={"vazio"}>Tudo</option>

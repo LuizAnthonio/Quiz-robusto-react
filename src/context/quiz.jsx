@@ -45,7 +45,7 @@ const response = await axios.get('https://quiz-perguntas-node-js.onrender.com/')
 
 
 const STAGES = ["Start", "Playing", "End","Cadastrar"]
-
+export const CONCURSOS = ["ENEM","Banco do Brasil"]
 export const TAGS = ["javascript","BB - Matematica", "BB - Português", "BB - Inglês" ,"BB - Atualidades do Mercado Financeiro", "BB - Programação", "BB - Conhecimentos Bancários","BB - Probabilidade e Estatística"]
 
 //importando perguntas e respostas 
